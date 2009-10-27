@@ -1,0 +1,8 @@
+%html
+  %body
+    .form{:style => 'margin-top: 20; margin-left: 10;'}
+      %form{:action => 'http://localhost:9000/update', :method => 'POST'}
+        %textarea{:name => 'message' }
+        %br
+        %input{:name => 'user', :size => 16, :value => 'bob'}
+        %input{:type => 'submit', :value => 'mm!'}
