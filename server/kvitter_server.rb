@@ -15,7 +15,7 @@ end
 post '/update' do
   # TODO> auth.
   begin
-    message = Kvitter::Message.new(params)
+    message = Kvitter::Message.create(params)
   rescue
     # TODO> handle failure.
   end
