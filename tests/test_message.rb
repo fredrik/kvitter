@@ -12,8 +12,9 @@ class TestMessage < Test::Unit::TestCase
     assert_equal message.user,    "bob"
     assert_equal message.message, "heh, that's just tremendous."
 
-    invalid_message = Kvitter::Message.create({})
-    assert (not invalid_message.valid?)
+    assert_raise ArgumentError do
+      Kvitter::Message.create({})
+    end
   end
 end
 

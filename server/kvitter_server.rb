@@ -18,6 +18,7 @@ post '/update' do
     message = Kvitter::Message.create(params)
   rescue
     # TODO> handle failure.
+    return "something went wrong, charles."
   end
-  "wha, #{user}."
+  "got it, thanks."
 end

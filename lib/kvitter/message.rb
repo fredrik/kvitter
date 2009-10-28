@@ -5,6 +5,8 @@ class Kvitter
     def initialize(message, user)
       @message = message
       @user    = user
+      raise ArgumentError.new("message not valid.") unless valid?
+      save() # write to hbase.
     end
     def self.create(params)
       Message.new(params[:message], params[:user])
@@ -15,6 +17,11 @@ class Kvitter
       #  + user.
       @message and (not @message.empty?) and (@message.length <= 256) and
       @user and (not @user.empty?)
+    end
+
+    private
+    def save
+      print "HBASE."
     end
   end
 end
