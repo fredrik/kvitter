@@ -1,5 +1,5 @@
 require 'kvitter/message'
+require 'kvitter/vault'
 
 class Kvitter
-  # hello.
 end

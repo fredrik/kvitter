@@ -14,11 +14,11 @@ end
 
 post '/update' do
   # TODO> auth.
-  begin
-    message = Kvitter::Message.create(params)
-  rescue
+  # TODO> keep Vault instance so to not set up connection for each store.
+  if Kvitter::Vault.store(params)
+    return "got it, thanks."
+  else
     # TODO> handle failure.
     return "something went wrong, charles."
   end
-  "got it, thanks."
 end
